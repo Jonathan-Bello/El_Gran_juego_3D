@@ -27,7 +27,7 @@ public class sus_control : MonoBehaviour
     void Update()
     {
         float h = Input.GetAxisRaw("Horizontal"); // A/D o flechas
-        // float v = Input.GetAxisRaw("Vertical");   // W/S o flechas
+        float v = Input.GetAxisRaw("Vertical");   // W/S o flechas
         entrada = new Vector3(h, 0f, v).normalized;
         
         if (Input.GetKeyDown(KeyCode.Space) && saltosRestantes > 0)
