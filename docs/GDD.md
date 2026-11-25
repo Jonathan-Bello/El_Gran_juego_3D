@@ -304,12 +304,12 @@ Cada zona es una **escena de Unity** (`Zona_Orilla.unity`, `Zona_Pueblo.unity`, 
 
 ### 8.3 Profundidad 2.5D
 Aunque la jugabilidad es en un plano, el escenario aprovecha la profundidad:
-- **Capa de fondo (Z −20 a −5):** paisaje, La Llorona errante a lo lejos (se ve pasar sin llegar al plano de juego).
+- **Capa de fondo (Z +5 a +20):** paisaje, La Llorona errante a lo lejos (se ve pasar sin llegar al plano de juego).
 - **Capa de juego (Z = 0):** plataformas, jugador, enemiga en persecución.
-- **Capa frontal (Z +2 a +6):** carrizos, rejas, ramas que tapan parcialmente la vista y generan sustos.
+- **Capa frontal (Z −2 a −6):** carrizos, rejas, ramas que tapan parcialmente la vista y generan sustos.
 - **Transiciones de profundidad:** puertas y escaleras que llevan al jugador "hacia adentro" del escenario, con un giro suave de cámara (blend de Cinemachine).
 
-> Convención de Unity en este proyecto: la cámara mira hacia **+Z** desde Z negativa o hacia −Z desde Z positiva; se fija una sola convención al crear la primera escena y se documenta aquí.
+> **Convención fijada (v0.3, con `Zona_Orilla.unity`):** la cámara está en Z negativa (≈ −18 m) y mira hacia **+Z**. Así, +X es la derecha de la pantalla, el **fondo está en Z positiva** y el **frente en Z negativa**.
 
 ---
 
@@ -582,6 +582,7 @@ Como la mecánica central depende del sonido, la accesibilidad es **obligatoria*
 |---|---|---|
 | 0.1 | — | Borrador inicial pensado para Three.js + TypeScript. |
 | 0.2 | 2026-11-24 | Adaptación a Unity 6: arquitectura técnica, audio con AudioMixer, post-procesado con URP, Input System, estructura del proyecto, reglas para agentes de IA y backlog M0 actualizado. |
+| 0.3 | 2026-11-25 | Se fija la convención de cámara 2.5D (mira hacia +Z) y se invierte el signo Z de las capas de fondo y frente (8.3). Primer diseño de La Orilla en `docs/niveles/Zona_Orilla.md`. |
 
 ---
 
